@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interaktive Weltkarte der Renditen | Partneris Immobilier</title>
+<meta name="description" content="Entdecken Sie einen interaktiven 3D-Globus: Klicken Sie auf ein Land, um dessen durchschnittliche Mietrendite zu sehen, und simulieren Sie Ihr Investitionsbudget mit Hypothekarzins.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2334322c'/><text x='32' y='44' font-family='Georgia,serif' font-size='34' font-weight='700' text-anchor='middle' fill='%23d8c685'>P</text></svg>">
+<noscript><style>.scroll-fade{opacity:1!important;transform:none!important;}</style></noscript>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">P</span>
+      <span class="brand-text"><strong>Partneris Immobilier</strong><span>Investissement</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="investissement-suisse.html">In der Schweiz investieren</a></li>
+      <li><a href="investissement-international.html">International investieren</a></li>
+      <li><a href="carte-mondiale.html">Interaktive Weltkarte</a></li>
+      <li><a href="droit-investissement.html">Rechtlicher Rahmen</a></li>
+      <li><a href="contact.html">Kontakt</a></li>
+    </ul>
+    <div class="nav-cta">
+      <details class="lang-switch">
+        <summary class="lang-switch-btn">DE <span class="car">&#9662;</span></summary>
+        <div class="lang-switch-menu">
+          <a href="../carte-mondiale.html">Français</a>
+          <a href="../en/carte-mondiale.html">English</a>
+          <a href="carte-mondiale.html" class="active">Deutsch</a>
+          <a href="../es/carte-mondiale.html">Español</a>
+          <a href="../ru/carte-mondiale.html">Русский</a>
+          <a href="../sq/carte-mondiale.html">Shqip</a>
+        </div>
+      </details>
+      <a href="https://partneris-immobilier.ch" class="btn btn-outline btn-sm btn-sm-desktop">Hauptwebsite</a>
+      <a href="contact.html" class="btn btn-gold btn-sm">Mit einem Berater sprechen</a>
+      <button class="nav-toggle" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Startseite</a> / Interaktive Weltkarte</div>
+    <div class="eyebrow">Interaktives Tool</div>
+    <h1>Die Weltkarte der Mietrenditen</h1>
+    <p>Drehen Sie den Globus oder suchen Sie ein Land. Klicken Sie auf einen Marker, um dessen durchschnittliche Mietrendite und unsere Einschätzung zu entdecken, und simulieren Sie anschliessend Ihr Budget mit Eigenkapital und Hypothekarzins.</p>
+  </div>
+</section>
+
+<section style="padding-top:48px;">
+  <div class="container">
+    <div class="search-box">
+      <span class="search-box-icon"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" ><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
+      <input type="text" id="pays-search" placeholder="Ein Land suchen (z. B. Portugal, Thailand, Kanada...)" autocomplete="off">
+      <div class="search-results" id="pays-search-results"></div>
+    </div>
+
+    <div class="globe-wrap">
+      <div class="globe-stage">
+        <div id="globe-canvas"></div>
+        <div class="globe-hint">Ziehen zum Drehen · Mausrad zum Zoomen · Klicken Sie auf einen Punkt zur Auswahl</div>
+        <div class="globe-legend">
+          <div><span class="dot" style="background:#8ba37f;"></span> Rendite 6.5%+</div>
+          <div><span class="dot" style="background:#d8c685;"></span> Rendite 4.5 – 6.5%</div>
+          <div><span class="dot" style="background:#c79a5e;"></span> Rendite 3 – 4.5%</div>
+          <div><span class="dot" style="background:#b2604a;"></span> Rendite &lt; 3%</div>
+        </div>
+      </div>
+
+      <div id="side-panel">
+        <div id="panel-empty">
+          <div class="icn"><svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.5 4 5.8 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.8-4-9s1.5-6.5 4-9z"/></svg></div>
+          <p style="margin:0;"><strong>Wählen Sie ein Land</strong><br>auf dem Globus oder über die Suche aus, um dessen Rendite anzuzeigen und Ihr Budget zu simulieren.</p>
+        </div>
+
+        <div id="panel-data" style="display:none;">
+          <div class="p-head">
+            <h3 id="p-name" style="margin:0;">—</h3>
+            <span id="p-region" class="pill pill-powder">—</span>
+          </div>
+          <div class="p-yield-num"><span id="p-yield">—</span></div>
+          <div class="p-yield-label">Durchschnittliche Brutto-Mietrendite</div>
+          <span id="p-verdict" class="pill pill-gold">—</span>
+          <p id="p-note" style="margin-top:14px;font-size:14px;color:var(--muted);">—</p>
+          <a id="p-legal-link" href="droit-investissement.html" style="font-size:13.5px;font-weight:600;color:var(--navy);">Rechtlichen Rahmen dieses Landes ansehen →</a>
+
+          <div class="divider" style="margin:22px 0;"></div>
+
+          <h4 style="margin-bottom:2px;">Meine Investition simulieren</h4>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:10px;">Passen Sie die Parameter an, um Ihre Nettorendite auf dem Eigenkapital zu schätzen.</p>
+
+          <div class="calc-grid">
+            <div class="calc-field">
+              <label>Gesamtbudget (CHF)</label>
+              <input type="number" id="in-budget" value="300000" step="10000" min="0">
+            </div>
+            <div class="calc-field">
+              <label>Eigenkapital (%)</label>
+              <input type="number" id="in-apport" value="25" step="1" min="0" max="100">
+            </div>
+            <div class="calc-field">
+              <label>Hypothekarzins (%)</label>
+              <input type="number" id="in-taux" value="3.5" step="0.1" min="0" max="20">
+            </div>
+            <div class="calc-field">
+              <label>Nebenkosten &amp; Leerstand (% Miete)</label>
+              <input type="number" id="in-charges" value="20" step="1" min="0" max="100">
+            </div>
+          </div>
+
+          <div class="calc-out">
+            <div class="calc-out-row"><span>Geschätzte jährliche Bruttomiete</span><strong id="out-loyer">—</strong></div>
+            <div class="calc-out-row"><span>Geschätzte Nebenkosten &amp; Leerstand</span><strong id="out-charges">—</strong></div>
+            <div class="calc-out-row"><span>Eigenkapital</span><strong id="out-apport-chf">—</strong></div>
+            <div class="calc-out-row"><span>Kreditbetrag</span><strong id="out-credit">—</strong></div>
+            <div class="calc-out-row"><span>Jährliche Hypothekarzinsen</span><strong id="out-interets">—</strong></div>
+            <div class="calc-out-row total"><span>Jährlicher Netto-Cashflow</span><strong id="out-cashflow">—</strong></div>
+            <div class="calc-out-row total"><span>Nettorendite / Eigenkapital</span><strong id="out-rendement-net">—</strong></div>
+          </div>
+
+          <div style="margin-top:14px;"><span id="calc-verdict" class="pill pill-gold">—</span></div>
+
+          <p style="font-size:11.5px;color:var(--muted-2);margin-top:16px;">Indikative Simulation basierend auf einer durchschnittlichen nationalen Mietrendite. Das Ergebnis ersetzt weder eine lokale Marktstudie noch eine individuelle Bankensimulation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-cream">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Vollständige Rangliste</div>
+      <h2>Die 75 abgedeckten Märkte, vom rentabelsten zum am wenigsten rentablen</h2>
+      <p>Klicken Sie auf eine Zeile, um sie direkt auf dem Globus wiederzufinden.</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Land</th><th>Region</th><th>Bruttorendite</th><th>Einschätzung</th></tr></thead>
+        <tbody id="full-table-body"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="badge-cta">
+      <div>
+        <h3>Möchten Sie zu einem bestimmten Land mehr erfahren?</h3>
+        <p>Unsere Berater verfeinern die Simulation mit den tatsächlichen Daten des angestrebten Objekts und Ihrer persönlichen Situation.</p>
+      </div>
+      <a href="contact.html" class="btn btn-gold">Einen Berater kontaktieren</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:14px;">
+          <span class="brand-mark">P</span>
+          <span class="brand-text"><strong style="color:#fff;">Partneris Immobilier</strong><span>Investissement</span></span>
+        </div>
+        <p style="color:rgba(255,255,255,.5);font-size:14px;max-width:34ch;">Der Investitionsbereich von Partneris Immobilier — über die Transaktion hinaus, eine Vermögensstrategie.</p>
+      </div>
+      <div>
+        <h4>Entdecken</h4>
+        <ul>
+          <li><a href="investissement-suisse.html">In der Schweiz investieren</a></li>
+          <li><a href="investissement-international.html">International investieren</a></li>
+          <li><a href="carte-mondiale.html">Weltkarte</a></li>
+          <li><a href="droit-investissement.html">Rechtlicher Rahmen</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Partneris</h4>
+        <ul>
+          <li><a href="https://partneris-immobilier.ch">Hauptwebsite</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hinweis</h4>
+        <p style="font-size:12.5px;color:rgba(255,255,255,.45);">Die Renditedaten sind indikative nationale Durchschnittswerte (Global Property Guide, 2026) und stellen keine persönliche Beratung dar.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span class="current-year"></span> Partneris Immobilier — Investissement</span>
+      <span>info@partneris-immobilier.ch</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/vendor/three.min.js"></script>
+<script src="../js/data-pays.de.js"></script>
+<script src="../js/strings.de.js"></script>
+<script src="../js/globe.js"></script>
+<script src="../js/calculateur.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

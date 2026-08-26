@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Partneris Immobilier</title>
+<meta name="description" content="Une question, un projet d'investissement en Suisse ou à l'international ? Contactez le pôle investissement de Partneris Immobilier.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2334322c'/><text x='32' y='44' font-family='Georgia,serif' font-size='34' font-weight='700' text-anchor='middle' fill='%23d8c685'>P</text></svg>">
+<noscript><style>.scroll-fade{opacity:1!important;transform:none!important;}</style></noscript>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">P</span>
+      <span class="brand-text"><strong>Partneris Immobilier</strong><span>Investissement</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="investissement-suisse.html">Investir en Suisse</a></li>
+      <li><a href="investissement-international.html">Investir à l'international</a></li>
+      <li><a href="carte-mondiale.html">Carte mondiale interactive</a></li>
+      <li><a href="droit-investissement.html">Cadre légal</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <details class="lang-switch">
+        <summary class="lang-switch-btn">FR <span class="car">&#9662;</span></summary>
+        <div class="lang-switch-menu">
+          <a href="contact.html" class="active">Français</a>
+          <a href="en/contact.html">English</a>
+          <a href="de/contact.html">Deutsch</a>
+          <a href="es/contact.html">Español</a>
+          <a href="ru/contact.html">Русский</a>
+          <a href="sq/contact.html">Shqip</a>
+        </div>
+      </details>
+      <a href="https://partneris-immobilier.ch" class="btn btn-outline btn-sm btn-sm-desktop">Site principal</a>
+      <a href="contact.html" class="btn btn-gold btn-sm">Parler à un conseiller</a>
+      <button class="nav-toggle" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Accueil</a> / Contact</div>
+    <div class="eyebrow">Contact</div>
+    <h1>Parlons de votre projet d'investissement</h1>
+    <p>Suisse, international, acquisition, vente ou stratégie long terme — décrivez votre projet, un conseiller Partneris Immobilier vous répond sous 24 heures.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="contact-wrap scroll-fade">
+
+      <div class="contact-form-pane">
+        <div class="eyebrow">Formulaire</div>
+        <h2 style="margin-bottom:8px;">Décrivez votre projet</h2>
+        <p style="color:var(--muted);margin-bottom:30px;">Plus vous nous donnez de détails, plus vite nous pourrons vous orienter vers le bon conseiller.</p>
+
+        <form id="contact-form" action="mailto:info@partneris-immobilier.ch" method="post" enctype="text/plain">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="f-nom">Nom complet</label>
+              <input type="text" id="f-nom" name="Nom" required placeholder="Votre nom">
+            </div>
+            <div class="form-field">
+              <label for="f-email">Email</label>
+              <input type="email" id="f-email" name="Email" required placeholder="vous@exemple.com">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="f-tel">Téléphone</label>
+              <input type="tel" id="f-tel" name="Téléphone" placeholder="+41 79 000 00 00">
+            </div>
+            <div class="form-field">
+              <label for="f-type">Type de projet</label>
+              <select id="f-type" name="Type de projet" required>
+                <option value="" disabled selected>Sélectionnez une option</option>
+                <optgroup label="Marché">
+                  <option value="Investissement en Suisse">Investissement en Suisse</option>
+                  <option value="Investissement à l'international">Investissement à l'international</option>
+                </optgroup>
+                <optgroup label="Nature de l'opération">
+                  <option value="Acquisition">Acquisition</option>
+                  <option value="Vente">Vente</option>
+                </optgroup>
+                <optgroup label="Horizon d'investissement">
+                  <option value="Investissement court terme">Investissement court terme</option>
+                  <option value="Investissement long terme">Investissement long terme</option>
+                </optgroup>
+                <option value="Autre">Autre</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field" style="margin-bottom:16px;">
+            <label for="f-budget">Budget indicatif (optionnel)</label>
+            <input type="text" id="f-budget" name="Budget indicatif" placeholder="ex. 300'000 – 500'000 CHF">
+          </div>
+
+          <div class="form-field" style="margin-bottom:8px;">
+            <label for="f-message">Votre message</label>
+            <textarea id="f-message" name="Message" required placeholder="Décrivez votre projet, votre échéance, vos questions..."></textarea>
+          </div>
+
+          <p class="form-note">En envoyant ce formulaire, votre messagerie par défaut s'ouvrira avec les informations pré-remplies à destination de info@partneris-immobilier.ch.</p>
+
+          <button type="submit" class="btn btn-gold" style="margin-top:18px;width:100%;">Envoyer ma demande →</button>
+        </form>
+      </div>
+
+      <div class="contact-info-pane">
+        <div class="eyebrow">Informations</div>
+        <h2>Une question,<br>un projet ?</h2>
+        <hr class="contact-hr">
+
+        <div class="contact-item">
+          <div class="ci-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></div>
+          <div>
+            <div class="ci-label">Adresse</div>
+            <div class="ci-value">Valais &amp; Genève<br>Suisse</div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="ci-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" ><path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2C9.5 21 3 14.5 3 6a2 2 0 0 1 2-2z"/></svg></div>
+          <div>
+            <div class="ci-label">Téléphone</div>
+            <div class="ci-value">
+              <a href="tel:+41762068261">+41 (0)76 206 82 61</a><br>
+              <a href="tel:+41799432635">+41 (0)79 943 26 35</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="ci-icon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" ><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+          <div>
+            <div class="ci-label">Email</div>
+            <div class="ci-value"><a href="mailto:info@partneris-immobilier.ch">info@partneris-immobilier.ch</a></div>
+          </div>
+        </div>
+
+        <div class="contact-delay">
+          <div class="ci-label">Délai de réponse</div>
+          <strong>Sous 24 heures</strong>
+          <span>Du lundi au vendredi</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="bg-cream">
+  <div class="container">
+    <div class="section-head center">
+      <div class="eyebrow" style="justify-content:center;">Avant de nous écrire</div>
+      <h2>Deux ressources qui répondent peut-être déjà à votre question</h2>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Rendement par pays</h3>
+        <p style="color:var(--muted);">Consultez notre carte mondiale interactive pour situer le rendement moyen de votre marché cible avant même de nous contacter.</p>
+        <a href="carte-mondiale.html" class="btn btn-navy btn-sm" style="margin-top:10px;">Ouvrir la carte</a>
+      </div>
+      <div class="card">
+        <h3>Puis-je acheter dans ce pays ?</h3>
+        <p style="color:var(--muted);">Vérifiez les conditions de nationalité et les restrictions à la propriété étrangère sur notre page cadre légal.</p>
+        <a href="droit-investissement.html" class="btn btn-navy btn-sm" style="margin-top:10px;">Voir le cadre légal</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand" style="margin-bottom:14px;">
+          <span class="brand-mark">P</span>
+          <span class="brand-text"><strong style="color:#fff;">Partneris Immobilier</strong><span>Investissement</span></span>
+        </div>
+        <p style="color:rgba(255,255,255,.5);font-size:14px;max-width:34ch;">Le pôle investissement de Partneris Immobilier — au-delà de la transaction, une stratégie patrimoniale.</p>
+      </div>
+      <div>
+        <h4>Explorer</h4>
+        <ul>
+          <li><a href="investissement-suisse.html">Investir en Suisse</a></li>
+          <li><a href="investissement-international.html">Investir à l'international</a></li>
+          <li><a href="carte-mondiale.html">Carte mondiale</a></li>
+          <li><a href="droit-investissement.html">Cadre légal</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Partneris</h4>
+        <ul>
+          <li><a href="https://partneris-immobilier.ch">Site principal</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Avertissement</h4>
+        <p style="font-size:12.5px;color:rgba(255,255,255,.45);">Les données de rendement et informations légales sont indicatives et ne constituent pas un conseil personnalisé. Contactez-nous pour une analyse adaptée à votre situation.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span class="current-year"></span> Partneris Immobilier — Investissement</span>
+      <span>info@partneris-immobilier.ch</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
